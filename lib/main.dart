@@ -1,4 +1,5 @@
-import 'package:algoriza_task1/app/screens/onBoarding/onBoarding_screen.dart';
+
+import 'package:algoriza_task1/screens/onBoarding/onBoarding_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {

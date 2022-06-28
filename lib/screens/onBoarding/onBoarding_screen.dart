@@ -1,11 +1,9 @@
-import 'package:algoriza_task1/app/screens/onBoarding/onBoarding_items/PageIndicator.dart';
-import 'package:algoriza_task1/app/screens/onBoarding/onBoarding_items/get_started_button.dart';
-import 'package:algoriza_task1/app/screens/onBoarding/onBoarding_items/page_content.dart';
-import 'package:algoriza_task1/app/screens/onBoarding/onBoarding_items/skip_button.dart';
-import 'package:algoriza_task1/presentation/color_manager.dart';
-import 'package:algoriza_task1/presentation/font_manager.dart';
-import 'package:algoriza_task1/presentation/styles_manager.dart';
-import 'package:algoriza_task1/presentation/values_manager.dart';
+
+import 'package:algoriza_task1/screens/onBoarding/onBoarding_items/page_content.dart';
+import 'package:algoriza_task1/screens/onBoarding/onBoarding_items/sign_up.dart';
+import 'package:algoriza_task1/screens/onBoarding/onBoarding_items/skip_button.dart';
+import 'package:algoriza_task1/screens/onBoarding/onBoarding_items/PageIndicator.dart';
+import 'package:algoriza_task1/screens/onBoarding/onBoarding_items/get_started_button.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingScreen extends StatefulWidget {
@@ -74,27 +72,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   Expanded(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const GetStartedButton(),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            top: AppPadding.p10,
-                            left: AppPadding.p10,
-                            right: AppPadding.p10,
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text("Don't have an account? ",
-                              style: getSemiBoldStyle(color: ColorManager.grey,fontSize: FontSize.s14),),
-                              GestureDetector(
-                                onTap: (){},
-                                child: Text("Sign up",
-                                  style: getSemiBoldStyle(color: ColorManager.orange,fontSize: FontSize.s14),),
-                              )
-                            ],
-                          ),
-                        ),
+                      children: const [
+                        GetStartedButton(),
+                        SignUp(),
                       ],
                     ),
                   ),

@@ -1,7 +1,9 @@
+import 'package:algoriza_task1/constant.dart';
 import 'package:algoriza_task1/presentation/color_manager.dart';
 import 'package:algoriza_task1/presentation/font_manager.dart';
 import 'package:algoriza_task1/presentation/styles_manager.dart';
 import 'package:algoriza_task1/presentation/values_manager.dart';
+import 'package:algoriza_task1/screens/login/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class SkipButton extends StatelessWidget {
@@ -10,7 +12,9 @@ class SkipButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){},
+      onTap: (){
+        navigateAndFinish(context: context, screen: const LoginScreen());
+      },
       child: Padding(
         padding: const EdgeInsets.only(
             top: AppPadding.p14,

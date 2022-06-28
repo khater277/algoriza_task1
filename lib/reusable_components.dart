@@ -1,4 +1,7 @@
 //ignore: must_be_immutable
+import 'package:algoriza_task1/presentation/color_manager.dart';
+import 'package:algoriza_task1/presentation/font_manager.dart';
+import 'package:algoriza_task1/presentation/styles_manager.dart';
 import 'package:algoriza_task1/presentation/values_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -81,7 +84,7 @@ class NoLeadingSpaceFormatter extends TextInputFormatter {
 }
 
 //ignore: must_be_immutable
-class DefaultTextFormFiled extends StatelessWidget{
+class DefaultTextFormField extends StatelessWidget{
   final TextEditingController? controller;
   final Color? textColor;
   final double textSize;
@@ -107,7 +110,7 @@ class DefaultTextFormFiled extends StatelessWidget{
 
 
 
-  DefaultTextFormFiled({Key? key,
+  DefaultTextFormField({Key? key,
     required this.controller,
     required this.textColor,
     required this.inputType,
@@ -163,9 +166,7 @@ class DefaultTextFormFiled extends StatelessWidget{
         filled: fillColor==null?false:true,
         fillColor: fillColor,
         hintText: hint,
-        hintStyle: TextStyle(
-          color: hintColor,
-        ),
+        hintStyle: getRegularStyle(color: hintColor!,fontSize: FontSize.s14),
         contentPadding: EdgeInsets.symmetric(vertical: heightPadding==null?AppPadding.p18:heightPadding!,
             horizontal: widthPadding==null?AppPadding.p10:widthPadding!),
         prefixIcon: prefix,
@@ -198,6 +199,30 @@ class DefaultTextFormFiled extends StatelessWidget{
           color: textColor,
         ),
       ),
+    );
+  }
+}
+
+class LoginRegisterTextField extends StatelessWidget {
+  final TextEditingController controller;
+  final TextInputType textInputType;
+  final String hint;
+  const LoginRegisterTextField({Key? key, required this.controller, required this.textInputType, required this.hint}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTextFormField(
+      controller: controller,
+      textColor: ColorManager.lightGrey,
+      inputType: textInputType,
+      hint: hint,
+      hintColor: ColorManager.lightGrey.withOpacity(0.6),
+      rounded: 3,
+      focusBorder: Colors.blue.withOpacity(0.5),
+      border: ColorManager.lightGrey.withOpacity(0.3),
+      textSize: FontSize.s18,
+      formatters: [NoLeadingSpaceFormatter()],
+      heightPadding: AppPadding.p2,
     );
   }
 }
