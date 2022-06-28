@@ -2,11 +2,13 @@ import 'package:algoriza_task1/presentation/color_manager.dart';
 import 'package:algoriza_task1/presentation/font_manager.dart';
 import 'package:algoriza_task1/presentation/styles_manager.dart';
 import 'package:algoriza_task1/presentation/values_manager.dart';
-import 'package:algoriza_task1/reusable_components.dart';
+import 'package:algoriza_task1/screens/login/login_components/google_sign_in.dart';
 import 'package:algoriza_task1/screens/login/login_components/help_button.dart';
-import 'package:algoriza_task1/screens/login/login_components/or_divider.dart';
 import 'package:algoriza_task1/screens/login/login_components/login_phone_text_field.dart';
+import 'package:algoriza_task1/screens/login/login_components/login_policy_text.dart';
+import 'package:algoriza_task1/screens/login/login_components/or_divider.dart';
 import 'package:algoriza_task1/screens/login/login_components/regester_here.dart';
+import 'package:algoriza_task1/screens/login/login_components/sign_in_button.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -77,18 +79,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           const SizedBox(
                             height: AppPadding.p20,
                           ),
-                          DefaultElevatedButton(
-                              color: ColorManager.orange,
-                              rounded: 5,
-                              height: 42,
-                              width: double.infinity,
-                              onPressed: () {},
-                              child: Text(
-                                "Sign in",
-                                style: getSemiBoldStyle(
-                                    color: Colors.white,
-                                    fontSize: FontSize.s14),
-                              )),
+                          const SignInButton(),
                           const SizedBox(
                             height: AppPadding.p14,
                           ),
@@ -96,45 +87,9 @@ class _LoginScreenState extends State<LoginScreen> {
                           const SizedBox(
                             height: AppPadding.p14,
                           ),
-                          DefaultOutLinedButton(
-                              borderColor: ColorManager.orange,
-                              rounded: 5,
-                              height: 42,
-                              width: double.infinity,
-                              onPressed: () {},
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: AppPadding.p5),
-                                    child: Image.asset(
-                                      "assets/images/google.png",
-                                      width: AppSize.s18,
-                                      height: AppSize.s18,
-                                    ),
-                                  ),
-                                  Text(
-                                    "Sign in with google",
-                                    style: getMediumStyle(
-                                        color: ColorManager.orange,
-                                        fontSize: FontSize.s12),
-                                  ),
-                                ],
-                              )),
+                          const GoogleSignIn(),
                           const RegisterHere(),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(
-                                vertical: AppPadding.p10),
-                            child: Text(
-                              "Using the application according to policy rules, Any kind of violations will be subject to sanctions",
-                              style: getLightStyle(
-                                  color: ColorManager.lightGrey,
-                                  fontSize: FontSize.s12,
-                                  height: 2),
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
+                          const LoginPolicyText(),
                         ],
                       ),
                     ),
