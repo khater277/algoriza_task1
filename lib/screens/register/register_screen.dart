@@ -52,14 +52,19 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         height: MediaQuery.of(context).size.height * (1 / 8),
                         fit: BoxFit.cover,
                       ),
-                      const Padding(
-                        padding: EdgeInsets.symmetric(horizontal: AppPadding.p10),
-                        child: CircleAvatar(
-                          backgroundColor: ColorManager.grey,
-                          child: Icon(
-                            Icons.arrow_back,
-                            size: 20,
-                            color: Colors.white,),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: AppPadding.p10),
+                        child: GestureDetector(
+                          onTap: (){
+                            Navigator.of(context).pop();
+                          },
+                          child: const CircleAvatar(
+                            backgroundColor: ColorManager.grey,
+                            child: Icon(
+                              Icons.arrow_back,
+                              size: 20,
+                              color: Colors.white,),
+                          ),
                         ),
                       )
                     ],
