@@ -3,8 +3,11 @@
 A new Flutter project.
 
 1st task in algoriza internship includes:
+
 1 - on boarding screen
+
 2 - login screen
+
 3 - register screen
 
 1st on boarding screen
