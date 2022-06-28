@@ -2,14 +2,10 @@
 
 A new Flutter project.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1st task in algoriza internship includes:
+1 - on boarding screen
+2 - login screen
+3 - register screen
 
 1st on boarding screen
 
