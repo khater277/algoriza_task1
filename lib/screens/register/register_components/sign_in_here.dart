@@ -3,7 +3,7 @@ import 'package:algoriza_task1/presentation/color_manager.dart';
 import 'package:algoriza_task1/presentation/font_manager.dart';
 import 'package:algoriza_task1/presentation/styles_manager.dart';
 import 'package:algoriza_task1/presentation/values_manager.dart';
-import 'package:algoriza_task1/screens/register/register_screen.dart';
+import 'package:algoriza_task1/screens/login/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class SignInHere extends StatelessWidget {
@@ -24,7 +24,7 @@ class SignInHere extends StatelessWidget {
           GestureDetector(
             onTap: () {
               // FocusScope.of(context).unfocus();
-              navigateAndFinish(context: context, screen: const RegisterScreen());
+              navigateAndFinish(context: context, screen: const LoginScreen());
             },
             child: Text(
               "Sign in here",

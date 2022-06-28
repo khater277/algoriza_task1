@@ -7,6 +7,7 @@ import 'package:algoriza_task1/screens/login/login_components/help_button.dart';
 import 'package:algoriza_task1/screens/login/login_components/login_phone_text_field.dart';
 import 'package:algoriza_task1/screens/login/login_components/or_divider.dart';
 import 'package:algoriza_task1/screens/register/register_components/sign_in_here.dart';
+import 'package:algoriza_task1/screens/register/register_components/terms_and_conditions_text.dart';
 import 'package:flutter/material.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -42,11 +43,26 @@ class _RegisterScreenState extends State<RegisterScreen> {
               hasScrollBody: false,
               child: Column(
                 children: [
-                  Image.asset(
-                    "assets/images/loginWP.jpg",
-                    width: double.infinity,
-                    height: MediaQuery.of(context).size.height * (1 / 8),
-                    fit: BoxFit.cover,
+                  Stack(
+                    alignment: AlignmentDirectional.centerStart,
+                    children: [
+                      Image.asset(
+                        "assets/images/loginWP.jpg",
+                        width: double.infinity,
+                        height: MediaQuery.of(context).size.height * (1 / 8),
+                        fit: BoxFit.cover,
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: AppPadding.p10),
+                        child: CircleAvatar(
+                          backgroundColor: ColorManager.grey,
+                          child: Icon(
+                            Icons.arrow_back,
+                            size: 20,
+                            color: Colors.white,),
+                        ),
+                      )
+                    ],
                   ),
                   Expanded(
                     child: Padding(
@@ -145,20 +161,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                         fontSize: FontSize.s12),
                                   ),
                                 ],
-                              )),
-                          const SignInHere(),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(
-                                vertical: AppPadding.p10),
-                            child: Text(
-                              "By registering your account, you are agree to our terms and conditions",
-                              style: getLightStyle(
-                                  color: ColorManager.lightGrey,
-                                  fontSize: FontSize.s12,
-                                  height: 2),
-                              textAlign: TextAlign.center,
-                            ),
+                              )
                           ),
+                          const SignInHere(),
+                          const TermsAndConditionsText(),
                         ],
                       ),
                     ),
@@ -173,23 +179,4 @@ class _RegisterScreenState extends State<RegisterScreen> {
   }
 }
 
-class TextFieldHead extends StatelessWidget {
-  final String name;
-  const TextFieldHead({Key? key, required this.name}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          name,
-          style: getMediumStyle(
-              color: ColorManager.lightGrey, fontSize: FontSize.s14),
-        ),
-        const SizedBox(
-          height: AppPadding.p8,
-        ),
-      ],
-    );
-  }
-}

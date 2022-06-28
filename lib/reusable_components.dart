@@ -226,3 +226,24 @@ class LoginRegisterTextField extends StatelessWidget {
     );
   }
 }
+
+class TextFieldHead extends StatelessWidget {
+  final String name;
+  const TextFieldHead({Key? key, required this.name}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text(
+          name,
+          style: getMediumStyle(
+              color: ColorManager.lightGrey, fontSize: FontSize.s14),
+        ),
+        const SizedBox(
+          height: AppPadding.p8,
+        ),
+      ],
+    );
+  }
+}
