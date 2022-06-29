@@ -3,6 +3,7 @@ import 'package:algoriza_task1/presentation/color_manager.dart';
 import 'package:algoriza_task1/presentation/font_manager.dart';
 import 'package:algoriza_task1/presentation/styles_manager.dart';
 import 'package:algoriza_task1/presentation/values_manager.dart';
+import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -207,22 +208,39 @@ class LoginRegisterTextField extends StatelessWidget {
   final TextEditingController controller;
   final TextInputType textInputType;
   final String hint;
-  const LoginRegisterTextField({Key? key, required this.controller, required this.textInputType, required this.hint}) : super(key: key);
+  final bool isPhone;
+  const LoginRegisterTextField({Key? key, required this.controller,
+    required this.textInputType, required this.hint,
+    this.isPhone = false}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return DefaultTextFormField(
       controller: controller,
-      textColor: ColorManager.lightGrey,
+      textColor: ColorManager.grey,
       inputType: textInputType,
       hint: hint,
       hintColor: ColorManager.lightGrey.withOpacity(0.6),
       rounded: 3,
       focusBorder: Colors.blue.withOpacity(0.5),
       border: ColorManager.lightGrey.withOpacity(0.3),
-      textSize: FontSize.s18,
+      textSize: FontSize.s14,
       formatters: [NoLeadingSpaceFormatter()],
       heightPadding: AppPadding.p2,
+      prefix: isPhone?
+      CountryCodePicker(
+        onChanged: print,
+        initialSelection: 'EG',
+        favorite: const ['+20','EG'],
+        showCountryOnly: false,
+        showOnlyCountryWhenClosed: false,
+        showFlag: false,
+        showFlagDialog: true,
+        alignLeft: false,
+        flagWidth: 20,
+        padding: const EdgeInsets.all(0),
+        textStyle: getSemiBoldStyle(color: ColorManager.grey,fontSize: FontSize.s14),
+      ):null,
     );
   }
 }

@@ -24,7 +24,7 @@ class RegisterHere extends StatelessWidget {
           GestureDetector(
             onTap: () {
               // FocusScope.of(context).unfocus();
-              navigateAndFinish(context: context, screen: const RegisterScreen());
+              navigateTo(context: context, screen: const RegisterScreen());
             },
             child: Text(
               "Register here",
