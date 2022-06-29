@@ -27,10 +27,11 @@ A new Flutter project.
 
 login screen
 
-![WhatsApp Image 2022-06-29 at 12 33 17 AM](https://user-images.githubusercontent.com/66753803/176316581-07f64f38-89d3-4aeb-9028-70cedab1d494.jpeg)
+![screenshot-1656514160697](https://user-images.githubusercontent.com/66753803/176467599-504ce99b-0f13-48ad-b806-72e69745d668.jpg)
 
 
 register screen
 
-![WhatsApp Image 2022-06-29 at 12 33 17 AM (1)](https://user-images.githubusercontent.com/66753803/176316609-03186888-169d-45af-9c43-e7bb5c2b6e92.jpeg)
+![screenshot-1656514176003](https://user-images.githubusercontent.com/66753803/176467679-45221214-8083-4670-aca7-38ae527f1d49.jpg)
+
 
