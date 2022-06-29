@@ -121,9 +121,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               controller: _passwordController,
                               textInputType: TextInputType.text,
                               hint: "Password",),
-                          const SizedBox(
-                            height: AppPadding.p20,
-                          ),
+                          const SizedBox(height: AppPadding.p20,),
                           const RegisterButton(),
                           const SizedBox(height: AppPadding.p14,),
                           const OrDivider(),

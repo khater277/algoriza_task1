@@ -23,7 +23,6 @@ class SignInHere extends StatelessWidget {
           ),
           GestureDetector(
             onTap: () {
-              // FocusScope.of(context).unfocus();
               navigateAndFinish(context: context, screen: const LoginScreen());
             },
             child: Text(
